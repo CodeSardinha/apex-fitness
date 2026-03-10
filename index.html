@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX FITNESS — Performance é Estilo de Vida</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Bebas Neue + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════ NAVBAR ══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">▲</span> APEX FITNESS
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#tools">Ferramentas</a></li>
+        <li><a href="#education">Saúde</a></li>
+        <li><a href="#tools" class="nav-cta">Começar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span> PLATAFORMA FITNESS 2026
+      </div>
+      <h1 class="hero-title">
+        SEU CORPO.<br>
+        <span class="title-accent">SUA MÁQUINA.</span><br>
+        DOMINE-A.
+      </h1>
+      <p class="hero-desc">
+        Ferramentas profissionais de treino, saúde e performance — tudo em um só lugar.
+        Calcule, controle e conquiste seus objetivos.
+      </p>
+      <div class="hero-actions">
+        <a href="#tools" class="btn-primary">
+          <span>Acessar Ferramentas</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#education" class="btn-ghost">Saber Mais</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">5</span><span class="stat-label">Ferramentas</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Gratuito</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Motivação</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="visual-card vc-float">
+        <span class="vc-icon">💪</span>
+        <span class="vc-text">Treino Gerado!</span>
+      </div>
+      <div class="visual-card vc-float-2">
+        <span class="vc-icon">🔥</span>
+        <span class="vc-text">2.400 kcal</span>
+      </div>
+      <div class="big-circle">
+        <div class="inner-circle">
+          <span class="circle-label">IMC</span>
+          <span class="circle-value">22.4</span>
+          <span class="circle-sub">Normal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ TOOLS ══════════════════════════════ -->
+  <section class="tools" id="tools">
+    <div class="section-header">
+      <span class="section-tag">// FERRAMENTAS</span>
+      <h2 class="section-title">Seu Arsenal Fitness</h2>
+      <p class="section-desc">Cinco ferramentas poderosas para transformar sua rotina de treino</p>
+    </div>
+
+    <div class="tools-grid">
+
+      <!-- ── CARD 1: IMC ── -->
+      <div class="tool-card" id="card-imc">
+        <div class="card-header">
+          <div class="card-icon">⚖️</div>
+          <div>
+            <h3 class="card-title">Calculadora de IMC</h3>
+            <p class="card-subtitle">Índice de Massa Corporal</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="input-group">
+            <label for="imc-peso">Peso (kg)</label>
+            <input type="number" id="imc-peso" placeholder="Ex: 75" min="1" max="300" />
+          </div>
+          <div class="input-group">
+            <label for="imc-altura">Altura (cm)</label>
+            <input type="number" id="imc-altura" placeholder="Ex: 175" min="50" max="250" />
+          </div>
+          <button class="btn-calc" onclick="calcIMC()">Calcular IMC</button>
+          <div class="result-box" id="imc-result" style="display:none;">
+            <div class="result-value" id="imc-valor">—</div>
+            <div class="result-label" id="imc-label">—</div>
+            <div class="imc-scale">
+              <div class="imc-bar">
+                <div class="imc-indicator" id="imc-indicator"></div>
+              </div>
+              <div class="imc-labels">
+                <span>Abaixo</span><span>Normal</span><span>Sobrepeso</span><span>Obeso</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CARD 2: TDEE ── -->
+      <div class="tool-card" id="card-tdee">
+        <div class="card-header">
+          <div class="card-icon">🔥</div>
+          <div>
+            <h3 class="card-title">Calculadora de Calorias</h3>
+            <p class="card-subtitle">Gasto Calórico Diário (TDEE)</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="inputs-row">
+            <div class="input-group">
+              <label for="tdee-idade">Idade</label>
+              <input type="number" id="tdee-idade" placeholder="Ex: 25" min="10" max="100" />
+            </div>
+            <div class="input-group">
+              <label for="tdee-sexo">Sexo</label>
+              <select id="tdee-sexo">
+                <option value="m">Masculino</option>
+                <option value="f">Feminino</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputs-row">
+            <div class="input-group">
+              <label for="tdee-peso">Peso (kg)</label>
+              <input type="number" id="tdee-peso" placeholder="Ex: 75" />
+            </div>
+            <div class="input-group">
+              <label for="tdee-altura">Altura (cm)</label>
+              <input type="number" id="tdee-altura" placeholder="Ex: 175" />
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="tdee-atividade">Nível de Atividade</label>
+            <select id="tdee-atividade">
+              <option value="1.2">Sedentário (sem exercício)</option>
+              <option value="1.375">Levemente ativo (1-3x/semana)</option>
+              <option value="1.55">Moderadamente ativo (3-5x/semana)</option>
+              <option value="1.725">Muito ativo (6-7x/semana)</option>
+              <option value="1.9">Extremamente ativo (2x/dia)</option>
+            </select>
+          </div>
+          <button class="btn-calc" onclick="calcTDEE()">Calcular TDEE</button>
+          <div class="result-box" id="tdee-result" style="display:none;">
+            <div class="tdee-cards">
+              <div class="tdee-mini" id="tdee-manter">
+                <span class="mini-label">Manutenção</span>
+                <span class="mini-value" id="val-manter">—</span>
+                <span class="mini-unit">kcal/dia</span>
+              </div>
+              <div class="tdee-mini tdee-mini-accent" id="tdee-perder">
+                <span class="mini-label">Emagrecer</span>
+                <span class="mini-value" id="val-perder">—</span>
+                <span class="mini-unit">kcal/dia</span>
+              </div>
+              <div class="tdee-mini" id="tdee-ganhar">
+                <span class="mini-label">Ganho de Massa</span>
+                <span class="mini-value" id="val-ganhar">—</span>
+                <span class="mini-unit">kcal/dia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CARD 3: TIMER ── -->
+      <div class="tool-card" id="card-timer">
+        <div class="card-header">
+          <div class="card-icon">⏱️</div>
+          <div>
+            <h3 class="card-title">Temporizador de Treino</h3>
+            <p class="card-subtitle">Cronômetro & Descanso</p>
+          </div>
+        </div>
+        <div class="card-body timer-body">
+          <div class="timer-tabs">
+            <button class="timer-tab active" id="tab-cronometro" onclick="switchTimer('cronometro')">Cronômetro</button>
+            <button class="timer-tab" id="tab-descanso" onclick="switchTimer('descanso')">Descanso</button>
+          </div>
+
+          <!-- Cronômetro -->
+          <div class="timer-panel" id="panel-cronometro">
+            <div class="timer-display">
+              <span id="crono-hh">00</span>:<span id="crono-mm">00</span>:<span id="crono-ss">00</span>
+            </div>
+            <div class="timer-controls">
+              <button class="btn-timer btn-start" id="btn-crono-start" onclick="cronoStart()">▶ Iniciar</button>
+              <button class="btn-timer btn-pause" id="btn-crono-pause" onclick="cronoPause()" disabled>⏸ Pausar</button>
+              <button class="btn-timer btn-reset" onclick="cronoReset()">↺ Reset</button>
+            </div>
+            <div class="timer-status" id="crono-status">Pronto para treinar!</div>
+          </div>
+
+          <!-- Descanso -->
+          <div class="timer-panel" id="panel-descanso" style="display:none;">
+            <div class="input-group">
+              <label for="rest-seconds">Tempo de descanso (segundos)</label>
+              <input type="number" id="rest-seconds" value="60" min="5" max="600" />
+            </div>
+            <div class="timer-display countdown-display">
+              <span id="rest-display">60</span><span class="rest-unit">s</span>
+            </div>
+            <div class="rest-ring">
+              <svg viewBox="0 0 120 120" class="ring-svg">
+                <circle cx="60" cy="60" r="50" class="ring-bg"/>
+                <circle cx="60" cy="60" r="50" class="ring-progress" id="ring-progress"/>
+              </svg>
+            </div>
+            <div class="timer-controls">
+              <button class="btn-timer btn-start" id="btn-rest-start" onclick="restStart()">▶ Iniciar</button>
+              <button class="btn-timer btn-reset" onclick="restReset()">↺ Reset</button>
+            </div>
+            <div class="timer-status" id="rest-status">Configure o tempo e inicie!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CARD 4: ÁGUA ── -->
+      <div class="tool-card" id="card-agua">
+        <div class="card-header">
+          <div class="card-icon">💧</div>
+          <div>
+            <h3 class="card-title">Contador de Água</h3>
+            <p class="card-subtitle">Hidratação Diária</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="water-goal-row">
+            <label for="water-goal">Meta diária (copos)</label>
+            <input type="number" id="water-goal" value="8" min="1" max="20" onchange="updateWaterGoal()" />
+          </div>
+          <div class="water-visual">
+            <div class="water-bottle">
+              <div class="water-fill" id="water-fill"></div>
+              <div class="water-count" id="water-count">0</div>
+            </div>
+          </div>
+          <div class="water-progress-wrap">
+            <div class="water-bar-bg">
+              <div class="water-bar-fill" id="water-bar"></div>
+            </div>
+            <div class="water-fraction">
+              <span id="water-current">0</span> / <span id="water-total">8</span> copos
+            </div>
+          </div>
+          <div class="water-buttons">
+            <button class="btn-water-add" onclick="addWater()">+ Adicionar Copo</button>
+            <button class="btn-water-remove" onclick="removeWater()">− Remover</button>
+          </div>
+          <div class="water-message" id="water-message">Vamos começar a se hidratar! 💧</div>
+        </div>
+      </div>
+
+      <!-- ── CARD 5: TREINO ── -->
+      <div class="tool-card tool-card-wide" id="card-treino">
+        <div class="card-header">
+          <div class="card-icon">🏋️</div>
+          <div>
+            <h3 class="card-title">Gerador de Treino</h3>
+            <p class="card-subtitle">Treino Rápido Personalizado</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="workout-options">
+            <div class="input-group">
+              <label for="workout-type">Tipo de Treino</label>
+              <select id="workout-type">
+                <option value="full">Full Body</option>
+                <option value="upper">Membros Superiores</option>
+                <option value="lower">Membros Inferiores</option>
+                <option value="core">Core / Abdômen</option>
+                <option value="cardio">Cardio</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="workout-level">Nível</label>
+              <select id="workout-level">
+                <option value="iniciante">Iniciante</option>
+                <option value="intermediario">Intermediário</option>
+                <option value="avancado">Avançado</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn-calc btn-generate" onclick="generateWorkout()">
+            ⚡ Gerar Treino
+          </button>
+          <div class="workout-result" id="workout-result" style="display:none;">
+            <div class="workout-header-result">
+              <span id="workout-title-result">Treino Gerado</span>
+              <span class="workout-badge" id="workout-badge">Full Body</span>
+            </div>
+            <div class="exercise-list" id="exercise-list"></div>
+            <div class="workout-tip" id="workout-tip"></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tools-grid -->
+  </section>
+
+  <!-- ══════════════════════════════ EDUCATION ══════════════════════════════ -->
+  <section class="education" id="education">
+    <div class="section-header">
+      <span class="section-tag">// CONHECIMENTO</span>
+      <h2 class="section-title">Base do Sucesso</h2>
+      <p class="section-desc">Os pilares fundamentais para uma vida saudável e uma performance de elite</p>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-icon">🏃</div>
+        <h3>Atividade Física</h3>
+        <p>A prática regular de exercícios reduz riscos cardíacos em até 35%, melhora humor, cognição, sono e aumenta a expectativa de vida. 150 minutos por semana já fazem diferença significativa.</p>
+        <ul class="edu-list">
+          <li>↑ Metabolismo acelerado</li>
+          <li>↑ Força e resistência</li>
+          <li>↑ Saúde mental</li>
+          <li>↓ Risco de doenças crônicas</li>
+        </ul>
+      </div>
+      <div class="edu-card edu-card-accent">
+        <div class="edu-icon">😴</div>
+        <h3>Descanso & Recuperação</h3>
+        <p>O músculo cresce durante o descanso, não no treino. Dormir 7-9 horas por noite é essencial para síntese proteica, equilíbrio hormonal e prevenção de lesões.</p>
+        <ul class="edu-list">
+          <li>✓ 7-9 horas de sono ideal</li>
+          <li>✓ 48h de recuperação muscular</li>
+          <li>✓ Dias de descanso ativo</li>
+          <li>✓ Técnicas de relaxamento</li>
+        </ul>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">🥗</div>
+        <h3>Alimentação Estratégica</h3>
+        <p>Nutrição é o combustível do seu desempenho. Priorize proteínas para recuperação muscular (1,6-2,2g/kg), carboidratos para energia e gorduras boas para saúde hormonal.</p>
+        <ul class="edu-list">
+          <li>↑ Proteínas magras</li>
+          <li>↑ Vegetais e fibras</li>
+          <li>↓ Ultraprocessados</li>
+          <li>↓ Açúcar refinado</li>
+        </ul>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">📅</div>
+        <h3>Consistência é Tudo</h3>
+        <p>Um treino perfeito uma vez nunca supera treinos bons feitos com regularidade. A consistência cria o hábito, o hábito cria a identidade e a identidade cria resultados permanentes.</p>
+        <ul class="edu-list">
+          <li>✓ Defina metas realistas</li>
+          <li>✓ Anote seu progresso</li>
+          <li>✓ Celebre pequenas vitórias</li>
+          <li>✓ Adapte, nunca desista</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">▲</span> APEX FITNESS
+        <p>Performance é estilo de vida.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#tools">Ferramentas</a>
+        <a href="#education">Saúde</a>
+        <a href="#hero">Início</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 APEX FITNESS — CodeSardinha</p>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
